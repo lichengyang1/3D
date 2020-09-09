@@ -147,6 +147,7 @@
 开始动作
 
 玩家选择一个模式开始游戏
+
 ![](https://exp-picture.cdn.bcebos.com/059057299a8839130d395f5b26bcbe2f46707c76.jpg?x-bce-process=image%2Fresize%2Cm_lfit%2Cw_500%2Climit_1)
 
 进步动作
