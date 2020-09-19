@@ -12,12 +12,14 @@
 ## 下载几个游戏案例，分别总结资源、对象组织的结构（指资源的目录组织结构与游戏对象树的层次结构）
 
 * **资源结构：** 在网上下载一个天天酷跑游戏的demo源码，目录结构如下，包含了动画、图片、预设、场景以及脚本
-![w5O8OA.png](https://s1.ax1x.com/2020/09/19/w5O8OA.png)
+
+    ![w5O8OA.png](https://s1.ax1x.com/2020/09/19/w5O8OA.png)
 
 </br>
 
 * **对象组织的目录结构：** 包含摄像头、玩家、背景、画布等对象
-![w5OJeI.png](https://s1.ax1x.com/2020/09/19/w5OJeI.png)
+
+    ![w5OJeI.png](https://s1.ax1x.com/2020/09/19/w5OJeI.png)
 
 </br>
 
@@ -79,6 +81,7 @@ public class test : MonoBehaviour
 </br>
 
 运行结果：
+
 [![w5X89U.png](https://s1.ax1x.com/2020/09/19/w5X89U.png)](https://imgchr.com/i/w5X89U)
 
 </br>
