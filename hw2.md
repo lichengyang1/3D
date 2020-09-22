@@ -142,3 +142,208 @@ public class test : MonoBehaviour
   * 运行截图：
 
     ![wIpo80.png](https://s1.ax1x.com/2020/09/19/wIpo80.png)
+
+</br></br></br>
+
+# 简单计算器
+
+* **实验内容**：使用IMGUI实现一个简单计算器，该计算器只能同时进行2个操作数的计算，支持4种基本算术运算、清空和退格功能
+
+* **工程部署**：计算器实现难度不高，可直接在OnGUI中实现，故只有一个脚本文件script,直接挂载到空对象上运行即可
+
+* **实现思路**：
+
+  * 通过OnGUI函数来生成UI元素，该函数将在每帧执行，并绘制到屏幕上。在整个过程中，所有对象都是即时生成的，没有其他持久性游戏对象。
+
+  * 对于一个计算器而言，UI元素包括按钮和显示框。对应到IMGUI中的控件为button和label。此外还使用了box控件来界定计算器的边界。
+
+  * 通过if语句和控件声明语句的组合来实现按钮点击的逻辑，例如if(GUI.Button(new Rect(...),"1"))。当游戏运行并单击 Button时，此if语句返回true并执行if代码块中的所有代码。由于每帧都会调用 OnGUI() 代码，因此无需显式创建和销毁 GUI 控件。完成所有控件的逻辑即完成了计算器的实现。
+
+* **实现过程**：
+  * 声明公共变量：
+    * str1,str2:两个操作数
+    * operator:操作符
+    * temp:计算结果
+    * result:显示结果
+    * style:改变样式
+  ```c#
+      public static string str1;//第一个操作数
+      public static string str2;//第二个操作数
+      public static string Operator;//操作符
+      public string result="0";//显示结果
+      float temp=0;//计算结果
+      public GUIStyle style=new GUIStyle();//用于改变样式
+  ```
+
+  * 控件：
+    * box:划分边界，用来装下整个计算器
+    * label：显示结果，显示文本为result
+    * button：输入操作数和操作符
+      * 当输入数字时，将其附加到str1尾部并更新result
+      * 当输入+-*/时，更新operator并将str1赋给str2然后清空str1
+      * 当输入CE时，全部变量重置
+      * 当输入←时，若str1为空，则result显示0，否则退格
+      * 当输入=时，进行计算并更新result
+
+  ```c#
+      void OnGUI(){
+
+          int m=Screen.width/2;
+          GUI.Box(new Rect(m-200,50,400,600),"简单计算器");
+          GUI.Label(new Rect(m-190, 75, 400, 50),result);   
+          //输入操作数
+          if(GUI.Button(new Rect(m,300,100,100),"1")){
+              str1+="1";
+              result=str1;
+          }
+
+          if(GUI.Button(new Rect(m-100,300,100,100),"2")){
+              str1+="2";
+              result=str1;
+          }
+
+          if(GUI.Button(new Rect(m-200,300,100,100),"3")){
+              str1+="3";
+              result=str1;
+          }
+
+          if(GUI.Button(new Rect(m,200,100,100),"4")){
+              str1+="4";
+              result=str1;
+          }
+
+          if(GUI.Button(new Rect(m-100,200,100,100),"5")){
+              str1+="5";
+              result=str1;
+          }
+
+          if(GUI.Button(new Rect(m-200,200,100,100),"6")){
+              str1+="6";
+              result=str1;
+          }
+
+          if(GUI.Button(new Rect(m,100,100,100),"7")){
+              str1+="7";
+              result=str1;
+          }
+
+          if(GUI.Button(new Rect(m-100,100,100,100),"8")){
+              str1+="8";
+              result=str1;
+          }
+
+          if(GUI.Button(new Rect(m-200,100,100,100),"9")){
+              str1+="9";
+              result=str1;
+          }
+
+          if(GUI.Button(new Rect(m-100,400,100,100),"0")){
+              str1+="0";
+              result=str1;
+          }
+
+          //输入操作符
+          if(GUI.Button(new Rect(m+100,100,100,100),"+")){
+              Operator="+";
+              if(str1!=""){
+                  str2=str1;
+              }
+              str1="";
+              result=str2;
+          }
+
+          if(GUI.Button(new Rect(m+100,200,100,100),"-")){
+              Operator="-";
+              if(str1!=""){
+                  str2=str1;
+              }        
+              str1="";
+              result=str2;
+          }        
+
+          if(GUI.Button(new Rect(m+100,300,100,100),"*")){
+              Operator="*";
+              if(str1!=""){
+                  str2=str1;
+              }
+              str1="";
+              result=str2;
+          }  
+
+          if(GUI.Button(new Rect(m+100,400,100,100),"/")){
+              Operator="/";
+              if(str1!=""){
+                  str2=str1;
+              }
+              str1="";
+              result=str2;
+          }
+
+          if(GUI.Button(new Rect(m,400,100,100),"←")){
+              if(str1==""){
+                  result="0";
+              }
+              else{
+                  str1=str1.Substring(0,str1.Length-1);
+                  result=str1;
+              }         
+          }
+
+          if(GUI.Button(new Rect(m-200,400,100,100),"CE")){
+              str1="";
+              str1="";
+              temp=0;
+              result="0";
+          }
+
+          if(GUI.Button(new Rect(m-200,500,400,50),"=")){
+              if(Operator=="+"){
+                  temp=float.Parse(str2)+float.Parse(str1);
+              }
+              else if(Operator=="-"){
+                  temp=float.Parse(str2)-float.Parse(str1);
+              }
+              else if(Operator=="*"){
+                  temp=float.Parse(str2)*float.Parse(str1);
+              }
+              else if(Operator=="/"){
+                  temp=float.Parse(str2)/float.Parse(str1);
+              }    
+              str1="";
+              str2=temp.ToString();         
+              result=temp.ToString();
+          }     
+  ```
+
+* **遇到的问题**
+  * 项目中遇到最大的问题就是样式问题
+    * 默认样式的字体太小，很难看清，因此需要调大字体，而对于样式的其他方面并不需要修改。因此最初代码如下
+
+    ```c#
+    GUIStyle style=new GUIStyle();
+    style.fonSize=20;
+    ```
+
+    * 但new GUIStyle()中所有样式参数为空，我只设定了字体参数，还需要根据需求设置hover等参数。于是代码修改如下
+
+    ```c#
+    GUIStyle style=new GUIStyle();
+    style.normal.textColor=Color.white;
+    style.hover.textColor=Color.red;
+    style.fonSize=20;
+    ```
+
+    * 应用之后发现，只有hover修改无效且控制台无错误信息。通过查阅资料和改为onHover等方式都没有找到原因，至今仍未解决
+  * 解决方法
+    * 方法一：在默认样式的基础上进行修改，代码如下
+    ```c#
+      GUIStyle s=GUI.skin.button;#获得button的默认样式
+      s.fontSize=20;
+    ```
+    * 方法二：声明公共变量，在编辑界面设置hover等样式
+    ```c#
+      public GUIStyle style=new GUIStyle();//用于改变样式
+    ```
+
+* 成果展示：
+![wLd57j.gif](https://s1.ax1x.com/2020/09/22/wLd57j.gif)
