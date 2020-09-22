@@ -337,7 +337,7 @@ public class test : MonoBehaviour
   * 解决方法
     * 方法一：在默认样式的基础上进行修改，代码如下
     ```c#
-      GUIStyle s=GUI.skin.button;#获得button的默认样式
+      GUIStyle s=GUI.skin.button;//获得button的默认样式
       s.fontSize=20;
     ```
     * 方法二：声明公共变量，在编辑界面设置hover等样式

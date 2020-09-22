@@ -1,2 +1,2 @@
 将script挂到空对象上即可
-然后在inspector调整字体
+

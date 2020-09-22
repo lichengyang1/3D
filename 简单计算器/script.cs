@@ -8,9 +8,10 @@ public class script : MonoBehaviour {
     public static string Operator;//操作符
     public string result="0";//显示结果
     float temp=0;//计算结果
-    public GUIStyle style=new GUIStyle();//用于改变样式
+    
     void OnGUI(){
-
+        GUIStyle s=GUI.skin.button;
+        s.fontSize=20;
         int m=Screen.width/2;
         GUI.Box(new Rect(m-200,50,400,600),"简单计算器");
         GUI.Label(new Rect(m-190, 75, 400, 50),result);   
