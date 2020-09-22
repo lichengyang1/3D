@@ -345,7 +345,7 @@ public class test : MonoBehaviour
       public GUIStyle style=new GUIStyle();//用于改变样式
     ```
 
-* 代码：<https://github.com/lichengyang1/3D/tree/master/%E7%AE%80%E5%8D%95%E8%AE%A1%E7%AE%97%E5%99%A8>
+* 代码： <https://github.com/lichengyang1/3D/tree/master/%E7%AE%80%E5%8D%95%E8%AE%A1%E7%AE%97%E5%99%A8>
 
 * 成果展示：
 
