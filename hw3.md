@@ -78,3 +78,9 @@
   * 工程部署：一个文件脚本rotate,挂载到空对象上，然后在inspector连接对象
 
     ![0A9VXj.png](https://s1.ax1x.com/2020/09/27/0A9VXj.png)
+
+  * 成果图：
+
+    ![0AMEgs.gif](https://s1.ax1x.com/2020/09/27/0AMEgs.gif)
+
+    ![0AMaVK.gif](https://s1.ax1x.com/2020/09/27/0AMaVK.gif)
