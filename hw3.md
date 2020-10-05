@@ -131,7 +131,7 @@
 
 
   [![0YZuND.png](https://s1.ax1x.com/2020/10/05/0YZuND.png)](https://imgchr.com/i/0YZuND)
-  
+
   * 将FirstController挂到空对象上即可运行
 
 * **实现过程**：
@@ -474,3 +474,10 @@
 
 成果展示：
 
+![0tSZ6S.png](https://s1.ax1x.com/2020/10/05/0tSZ6S.png)
+
+gif图太大，所以放网盘
+
+<https://pan.baidu.com/s/1C9uSuyZoMBUx77DSL1VY-Q>
+
+提取码：wq44
