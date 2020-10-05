@@ -102,10 +102,12 @@
       | 点击船 | 船上至少有一个角色 | 船移动到另一岸 |
 
     * 请将游戏中对象做成预制
+
     [![0YFoRI.png](https://s1.ax1x.com/2020/10/05/0YFoRI.png)](https://imgchr.com/i/0YFoRI)
   
     * 在场景控制器 LoadResources 方法中加载并初始化长方形、正方形、球 及其色彩代表游戏中的对象。
     * 整个游戏仅主摄像机和一个 Empty 对象，其他对象必须代码动态生成！！！ 
+
     [![0YFIJA.png](https://s1.ax1x.com/2020/10/05/0YFIJA.png)](https://imgchr.com/i/0YFIJA) 
     * 整个游戏不许出现 Find 游戏对象，SendMessage这类突破程序结构的 通讯耦合语句。违背本条准则，不给分
     * 请使用课件架构图编程，不接受非 MVC 结构程序
@@ -126,8 +128,8 @@
     * Click.cs-实现对象接收用户的点击操作
   * Views
     * UserGUI.cs-渲染GUI
-
   [![0YZuND.png](https://s1.ax1x.com/2020/10/05/0YZuND.png)](https://imgchr.com/i/0YZuND)
+  * 将FirstController挂到空对象上即可运行
 
 * **实现过程**：
   * Models
