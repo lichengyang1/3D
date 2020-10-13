@@ -30,7 +30,7 @@
 
         ![068iQO.png](https://s1.ax1x.com/2020/10/10/068iQO.png)
 
-    *运行游戏
+    * 运行游戏
 
     [![068f1K.gif](https://s1.ax1x.com/2020/10/10/068f1K.gif)](https://imgchr.com/i/068f1K)
 
@@ -426,3 +426,24 @@
       }
       ```
 
+* **遇到的问题和一些细节**
+  * 关于移动时拒绝用户事件的改动
+    * 在分离动作后，将复原state的操作移至动作管理器中
+
+    ```c#
+    public void moveBoat(GameObject boat,Vector3 destination,float speed){
+        SSAction action1=SSMoveToAction.GetSSAction(destination,speed);
+        boatMove=SequenceAction.GetSSAcition(0,0,new List<SSAction>{action1 });
+        this.RunAction(boat,boatMove,this);
+        Click.state=0;//移动完成后复原state
+    }
+
+    public void moveRole(GameObject role,Vector3 mid,Vector3 destination,float speed){
+        SSAction action1=SSMoveToAction.GetSSAction(mid,speed);
+        SSAction action2=SSMoveToAction.GetSSAction(destination,speed);
+
+        roleMove=SequenceAction.GetSSAcition(1,0,new List<SSAction>{action1,action2 });
+        this.RunAction(role,roleMove,this);
+        Click.state=0;//移动完成后复原state
+    }
+    ```
