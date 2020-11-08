@@ -12,9 +12,12 @@
       * 之前的打飞碟UML类图大致如下
 
         [![BTMdhj.png](https://s1.ax1x.com/2020/11/08/BTMdhj.png)](https://imgchr.com/i/BTMdhj)
+
       * 为实现物理引擎动作，考虑添加PhyFlyAction类，则FirstController不再匹配接口。若此时再添加一个动作管理器PhyFlyActionManager，虽然可行，但系统的可扩展性太低，每多一个运动模式就要多一个对应管理器
       * 若此时使用Adapter模式，使不兼容的两个类能在一起工作
+
         [![BTM09s.png](https://s1.ax1x.com/2020/11/08/BTM09s.png)](https://imgchr.com/i/BTM09s)
+        
       * 修改后的UML图如上，通过将ActionManager设计为适配器，将FirstController和两种运动模式类的接口衔接起来。在FirstController的视角，只需要调用ActionManager中的相关方法即可
   * 使它同时支持物理运动与运动学（变换）运动
 
