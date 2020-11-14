@@ -68,7 +68,7 @@
 3. 多种方式实现不一样的`Grid`布局，包括`BoundedGrid`和`UnboundedGrid`
 
    * 通过`SparseGridNode` + `ArrayList<>`或`Array[]`实现
-   * 通过``LinkedList<OccupantInCol>`实现，
+   * 通过`LinkedList<OccupantInCol>`实现，
    * 通过`HashMap`来实现
    * 通过`TreeMap`实现，
 
