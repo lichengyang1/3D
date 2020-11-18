@@ -52,7 +52,7 @@
   * cameraPos挂载CameraController
 * 在Patrol预制上挂载Patrol
 * 在Plane预制中为每个区域挂载AreaCollide
-* 
+
 </br>
 
 游戏玩法基本介绍：
