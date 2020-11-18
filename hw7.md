@@ -19,7 +19,7 @@
   - 工厂模式生产巡逻兵
 
 
-
+</br>
 
 工程部署：根据MVC架构，项目文件分为3个部分。
 
@@ -42,10 +42,18 @@
   - Singleton.cs
   - SSDirector.cs
 - Views：定义GUI
-
   - UserGUI.cs
 
+</br>
 
+脚本挂载
+* 在场景中创建一个空对象，挂载FirstController,GameEventManager,ScoreRecorder和PatrolFactory
+* 在Player预制上挂载PlayerCollide,PlayerInput
+  * cameraPos挂载CameraController
+* 在Patrol预制上挂载Patrol
+* 在Plane预制中为每个区域挂载AreaCollide
+* 
+</br>
 
 游戏玩法基本介绍：
 
@@ -53,7 +61,7 @@
 * 玩家通过WSAD控制人物走动，按住left shift开始奔跑，使用方向键调整视角方向
 * 当玩家进入其他格时，该格的巡逻兵就会开始追逐玩家，若玩家成功离开该区域，则代表甩开巡逻兵，巡逻兵停止追逐并分数加一；若玩家与巡逻兵触碰则游戏结束。
 
-
+</br>
 
 实现过程：
 
@@ -455,7 +463,7 @@
 
   ​      
 
-
+</br>
 
 
 
